@@ -20,8 +20,9 @@ export async function POST(request: NextRequest) {
     }
 
     console.log(`Making API call to: ${apiUrl}`);
+    console.log(`Scenario ID: ${body.scenarioId ?? 'random'}`);
 
-    // Forward the request to the actual API
+    // Forward the request to the actual API (includes scenarioId)
     const apiResponse = await fetch(`${apiUrl}/outbound-call`, {
       method: 'POST',
       headers: {

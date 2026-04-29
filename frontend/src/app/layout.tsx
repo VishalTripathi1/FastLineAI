@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FirstLine AI",
-  description: "Advanced AI-powered emergency response training",
+  title: "FirstLine AI — Dispatcher Training",
+  description: "AI-powered emergency dispatcher training simulator. Practice handling real 911 calls with AI callers.",
 };
 
 export default function RootLayout({
