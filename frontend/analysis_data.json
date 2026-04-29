@@ -1,4 +1,10 @@
 {
+  "1": {
+    "callSid": "test-123",
+    "pass_fail": "FAIL",
+    "scenarioId": 1,
+    "receivedAt": "2026-04-29T15:39:04.099Z"
+  },
   "2": {
     "scenario": "Sarah Johnson - Unconscious teenager",
     "overall_rating": {
@@ -38,5 +44,41 @@
     "final_recommendation": "This trainee needs substantial improvement in handling emergency calls. They should undergo further training focused on effective communication under pressure, the ability to quickly gather critical information, and the skills required to provide precise instructions to untrained individuals in crisis situations. Regular simulation exercises that mimic high-stress environments will be beneficial for better preparation.",
     "pass_fail": "FAIL",
     "receivedAt": "2025-03-11T14:49:19.572Z"
+  },
+  "test-123": {
+    "callSid": "test-123",
+    "pass_fail": "FAIL",
+    "scenarioId": 1,
+    "receivedAt": "2026-04-29T15:39:04.099Z"
+  },
+  "CA14357eab12d73a70c1b3ae209b7804f9": {
+    "scenario": "Drowning Child — Pool Emergency",
+    "scenarioId": null,
+    "overall_rating": {
+      "score": 0,
+      "summary": "Analysis could not be completed - OpenAI API error"
+    },
+    "strengths": [
+      "Call was completed successfully"
+    ],
+    "areas_for_improvement": [
+      "Analysis unavailable - please check OpenAI API key"
+    ],
+    "information_handling": {
+      "gathered_correctly": [],
+      "missed_or_incorrect": []
+    },
+    "action_assessment": {
+      "appropriate_actions": [],
+      "inappropriate_actions": []
+    },
+    "efficiency": {
+      "response_time_rating": 0,
+      "comments": "Unable to assess - analysis failed"
+    },
+    "final_recommendation": "Call completed but analysis failed. Please configure a valid OpenAI API key in outbound/.env to enable call analysis.",
+    "pass_fail": "FAIL",
+    "callSid": "CA14357eab12d73a70c1b3ae209b7804f9",
+    "receivedAt": "2026-04-29T15:42:50.452Z"
   }
 }

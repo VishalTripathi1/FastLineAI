@@ -299,13 +299,18 @@ fastify.register(async (fastifyInstance) => {
         elevenLabsWs.on('open', () => {
           console.log('[ElevenLabs] Connected to Conversational AI');
 
-          // Agent prompt & first_message are configured on the ElevenLabs dashboard.
-          // We only send initiation data without overrides to avoid security setting issues.
+          // Pass the dynamic prompt and first message to override the default dispatcher behavior
           const initialConfig = {
             type: 'conversation_initiation_client_data',
+            conversation_config_override: {
+              agent: {
+                prompt: { prompt: customParameters?.prompt },
+                first_message: customParameters?.first_message,
+              }
+            }
           };
 
-          console.log('[ElevenLabs] Sent initiation data (using agent dashboard config)');
+          console.log('[ElevenLabs] Sent initiation data with dynamic scenario override');
 
           elevenLabsWs.send(JSON.stringify(initialConfig));
         });
@@ -700,7 +705,7 @@ DO NOT include any explanatory text, markdown formatting, or code blocks - retur
     // Send a "failed" analysis to frontend so status updates even when OpenAI fails
     const failedAnalysis = {
       scenario: parameters?.scenarioName || 'Unknown',
-      scenarioId: parsedScenarioId,
+      scenarioId: parameters?.scenarioId || null,
       overall_rating: {
         score: 0,
         summary: "Analysis could not be completed - OpenAI API error"
